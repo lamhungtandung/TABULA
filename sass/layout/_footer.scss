@@ -1,0 +1,164 @@
+#tabula_footer {
+    background-image: url(http://tabula.bold-themes.com/wavy/wp-content/uploads/sites/3/2019/03/footer_background.jpg);
+    background-position: top center;
+    background-size: cover;
+
+    .footer_content{
+        padding: 0 $pd-6;
+    }
+
+    .row {
+        padding-top: 7.5em;
+        padding-bottom: 11.5em;
+    }
+
+    .footer_contact {
+        padding: 0 $pd-1 + 5px;
+
+         .about{
+            padding: 0 $pd-1 + 1px;
+         }
+
+          h2 {
+            @include styleText($color-white, $fsr-3, $fw4);
+            margin-bottom: $mg-1;
+        }
+
+          ul {
+
+        .itemSS{
+            margin: 15px -39px;
+        }  
+
+            li {
+                @include styleText($color-white, $fse-1, $fw1);
+                display: flex;
+                line-height: 1.1;
+                align-items: center;
+                
+                i {
+                    line-height: 1;
+                    margin-right: $fse-1 - 0.1;
+                }
+
+                margin-bottom: 1em;
+            }
+           }
+
+        .footer_lists {
+            display: flex;
+            flex-direction: column;
+            float: left;
+
+            li {
+                transition: all 0.3s;
+                cursor: pointer;
+                padding-bottom: 1em;
+                margin-bottom: 1em;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+
+        .footer_icon {
+            display: flex;
+            align-items: center;
+
+            i {
+                @include styleText($color-white, $fsr-2, $fw2);
+                line-height: 1;
+                padding-right: 1em;
+                cursor: pointer;
+                transition: all 0.4s;
+
+                &:hover {
+                    color: $color-black;
+                }
+            }
+        }
+
+        .footer_email {
+            text-align: center;
+            font-family: "Roboto", sans-serif;
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            -webkit-text-fill-color: #fff;
+            transition: all 0.5s;
+            width: 100%;
+            height: 3.2em;
+            border: 1px solid transparent;
+            font-size: $fse-1 - 0.1;
+
+            &:focus {
+                transition: all 0.5s;
+                outline: none;
+                border: 1px solid rgba(255, 255, 255, 1);
+            }
+
+            margin-bottom: 0.5em;
+            margin-top: 15px;
+
+            border-radius: 50px;
+        }
+
+        .btn-footer {
+            background-color: $color-primary;
+            border: 1px solid $color-white;
+            font-size: $fse-1 - 0.1;
+            width: 100%;
+            color: $color-black;
+            border-radius: 50px;
+            box-shadow: 0px 0px 0px 3em $color-white inset;
+            letter-spacing: 1px;
+            font-weight: 600;
+            height: 4em;
+
+            &:hover {
+                color: $color-white;
+                box-shadow: 0px 0px 0px 1px $color-white inset;
+            }
+        }
+    }
+}
+
+//responsive
+@include responsive('large'){
+    #tabula_footer {
+        .footer_contact{
+            padding: 0 4px;
+            margin-bottom: $mg-6 + 5px;
+        }
+        .row{
+            padding-top: 8em;
+        }
+        .footer_left{
+            margin-left: $mg-1 + 5px;
+        }
+
+        .col-sm-6{
+            padding-right: 0;
+        }
+
+        .footer_content{
+            padding: 0 $pd-1;
+        }
+    }
+}
+
+@include responsive('small'){
+    #tabula_footer {
+
+        .footer_left{
+            margin-left: 0;
+        }
+
+        .footer_content{
+            padding: 0 $pd-1 - 5px;
+        }
+       
+    }
+}

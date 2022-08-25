@@ -1,24 +1,28 @@
 #header_first {
     transition: all 0.5s;
     animation: menu linear 0.3s;
+
     &.show {
+        background-color: $color-white;
         top: 0;
-        box-shadow: 0 0 10px 0 rgb(204 204 204 / 50%);
-        animation: hoverNavbar linear 0.6s;
-        position: fixed;
-        background-color: #fff;
         height: 48px;
         width: 100%;
-        .tabula_logo {
-            display: none;
-        }
+        animation: hoverNavbar linear 0.6s;
+        position: fixed;
+        box-shadow: 0 0 10px 0 rgb(204 204 204 / 50%);
+
         .nav-item {
+
             &::after {
                 display: none;
             }
 
             padding-top: 0;
             padding-bottom: 0;
+        }
+
+        .header_logo {
+            display: none;
         }
     }
 }
@@ -27,33 +31,46 @@ header {
     .header_content2 {
         display: none;
     }
+    font-size: $fsp-1;
     position: absolute;
     z-index: 12;
     width: 100%;
     height: 80px;
-    font-size: $fsp-1;
+    
     nav {
         height: 100%;
     }
 
     nav.navbar-expand-lg {
-        padding: 5px 32px;
+        padding: $pd-6 $pd-1 + 7px;
     }
 
     img {
         width: 80px;
     }
 
-    .nav_icons i {
+    .nav_icon i {
         cursor: pointer;
-        padding: 5px;
+        padding: $pd-6 - 3px;
         transition: all 0.4s;
+
         &:hover {
             color: $color-primary;
         }
     }
+
     #navbarNavDropdown {
         height: 100%;
+    }
+
+    .nav-contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .nav_icon{
+            display: flex;
+        }
     }
 
 }
@@ -62,32 +79,37 @@ header {
     margin-left: auto;
     height: 100%;
     align-items: center;
+
     .navbar-nav {
+        display: flex;
+        align-items: center;
         height: 100%;
     }
+
     .nav-item {
         &:nth-child(6) {
-            padding-right: 40px;
+            padding-right: 42px;
         }
         display: flex;
         cursor: pointer;
-        padding: 15px 0;
+        padding: $pd-3 + 3px 0;
         align-items: center;
         padding-right: 23px;
-        padding-left: 12px;
+        padding-left: $pd-3 + 2px;
         position: relative;
-        transition: all 0.5s;
+        transition: all 0.4s;
+
         &::after {
             content: "";
-            background-color: transparent;
             display: block;
-            width: 150%;
-            height: 10px;
-            top: -10px;
+            background-color: transparent;
             position: relative;
+            width: 150%;
+            height: 9px;
+            top: -10px;
         }
 
-        &:hover {
+        &:hover{
             .nav-link::after {
                 width: 12px;
                 height: 12px;
@@ -95,6 +117,7 @@ header {
                 transition: all 0.5s;
             }
         }
+
         .nav-link {
             color: $color-black;
             font-weight: $fw3;
@@ -103,16 +126,18 @@ header {
         }
     }
 }
-//sub
-.tabula_wrapper-navbar {
+
+.header_link {
+    display: flex;
     width: 100%;
     height: auto;
-    display: flex;
     align-items: center;
+
     .header_clone {
-        opacity: 0;
+        position: absolute;
         width: 780px;
         top: 100%;
+        opacity: 0;
         box-shadow: 0 0 10px 0 rgb(204 204 204 / 50%);
         visibility: hidden;
         transition: all 0.5s;
@@ -121,11 +146,14 @@ header {
             display: flex;
             align-items: center;
         }
+
         .header_list {
-            background-color: #fff;
-            width: 36%;
-            .tabula_sub-list {
+            background-color: $color-white;
+            width: 35%;
+
+            .headList_jr {
                 transition: all 0.5s;
+
                 &:hover {
                     color: $color-primary;
                 }
@@ -133,13 +161,15 @@ header {
                 &.active {
                     line-height: 2.2rem;
                 }
+
                 &.active::after {
                     content: "";
                     display: block;
                     width: 100%;
-                    height: 2px;
+                    height: 3px;
                     background-color: $color-primary;
                 }
+
                 &::after {
                     content: "";
                     display: block;
@@ -151,23 +181,22 @@ header {
                     left: 50%;
                     transform: translate(-50%, -50%);
                 }
-                line-height: 2.8rem;
 
+                line-height: 2.7rem;
                 padding: 0em 1.5em;
+
                 @include styleText($color-black, $fse-1, $fw3);
             }
         }
-        transition: all 0.3s;
+
         display: flex;
-        transform: scale(0.8);
+        transform: scale(0.7);
+        transition: all 0.3s;
+
     }
 }
-.navHome,
-.tabula_sub-about,
-.tabula_sub-course,
-.tabula_sub-blog,
-.tabula_sub-shop,
-.tabula_sub-ele {
+.navHome, .header_about, .header_course, .header_blog, .header_shop, .header_element {
+
     &::before {
         content: "";
         display: block;
@@ -181,61 +210,67 @@ header {
         z-index: 12;
         transform: scale(1);
         transform: translateY(-50%);
-        transition: all 0.5s;
+        transition: all 0.6s;
         opacity: 0;
     }
+
     &:hover::before {
         width: 11px;
         height: 11px;
         opacity: 1;
     }
+
     &.active {
+
         &::before {
             width: 9px;
             height: 9px;
             opacity: 1;
         }
+
         &:hover::before {
-            width: 11px;
-            height: 11px;
+            width: 10px;
+            height: 10px;
         }
     }
+
     &:hover .header_clone {
-        transition: all 0.5s;
         visibility: visible;
         transform-origin: center;
-        opacity: 1;
         transform: scale(1);
+        transition: all 0.4s;
+        opacity: 1;
     }
 }
-//tabula -Home hover
-.navHome,
-.tabula_sub-ele {
+
+//hover
+.navHome, .header_element {
+
     .header_clone {
         left: -375px;
     }
 }
-.tabula_sub-ele {
+
+.header_element {
+
     .header_list {
         text-align: right;
     }
 }
-.tabula_sub-course,
-.tabula_sub-blog,
-.tabula_sub-about,
-.tabula_sub-shop {
+.header_about, .header_course, .header_blog, .header_shop {
+
     .header_clone {
         width: 222px;
         left: 10%;
 
         .header_list {
-            width: 220px;
+            width: 222px;
         }
     }
 }
 
-//tabula -Shop hover
-.tabula_sub-shop {
+//hover
+.header_shop {
     text-align: right;
 }
 //Tabula sub2
@@ -245,6 +280,7 @@ header {
         visibility: visible;
     }
     position: relative;
+
     &::before {
         content: "";
         display: block;
@@ -304,6 +340,7 @@ header {
         transform: translateY(0);
     }
 }
+
 @keyframes hoverNavbar {
     49% {
         transform: translateY(-100%);
@@ -318,6 +355,7 @@ header {
     body.show {
         overflow-y: hidden;
     }
+
     #header_first {
         .navbar .navbar-expand-lg,
         .navbar,
@@ -332,15 +370,16 @@ header {
         }
     }
 
-    .tabula_wrapper-navbar {
+    .header_link {
         display: none;
+        top: 0;
         overflow-y: scroll;
         width: 60vw;
         height: 100vh;
-        top: 0;
-        position: absolute;
         background-color: #fff;
         flex-direction: column;
+        position: absolute;
+
         .tabula_nav-contacts {
             margin: 2em 0;
             .tabula_nav-btn {
@@ -367,19 +406,14 @@ header {
                 font-weight: $fw1;
             }
             .nav-item {
-                line-height: 1.1;
                 width: 100%;
+                line-height: 1.2;
                 &.tabula_sub-about span,
                 &.tabula_sub-about .tabula_sub-list:nth-child(3) {
-                    font-weight: 600;
+                    font-weight: 599;
                 }
             }
-            .navHome,
-            .tabula_sub-about,
-            .tabula_sub-course,
-            .tabula_sub-blog,
-            .tabula_sub-shop,
-            .tabula_sub-ele {
+            .navHome, .header_about, .header_course, .header_blog, .header_shop, .header_element {
                 &::before {
                     display: none;
                 }
@@ -389,6 +423,7 @@ header {
                 }
 
                 text-align: center;
+
                 &.show {
                     .tabula_sub-mobile{
                         display: block;
@@ -406,7 +441,23 @@ header {
                     }
                 }
             }
-            .tabula_sub-list {
+
+            .header_blog {
+                .headList_jr
+                .tabula_sub-list-sub {
+                    padding: 0;
+                }
+
+                .tabula_sub2-mobile {
+                    li {
+                        font-size: $fse-1;
+                        padding: 1em 2em;
+                        opacity: 0.8;
+                    }
+                }
+            }
+
+            .headList_jr {
                 font-size: $fse-1;
                 &.show {
                     .tabula_sub-items,
@@ -418,14 +469,17 @@ header {
                         display: none;
                     }
                 }
+
                 .tabula_sub2-mobile {
                     display: none;
                 }
+
                 .tabula_sub-items,
                 .tabula_sub-list-sub,
                 .fa-angle-down {
                     display: block;
                 }
+
                 &.tabula_sub-list-sub {
                     .tabula_sub-list-sub.tabula_sub-title {
                         padding: 1em 2em;
@@ -435,10 +489,11 @@ header {
                         .tabula_sub2-mobile-itemss {
                             padding: 1em 2em;
                         }
-                        .tabula_sub-list {
-                            font-size: $fse-1 - 0.1;
-                            opacity: 0.7;
+
+                        .headList_jr {
                             padding: 1em 2em;
+                            font-size: $fse-1 - 0.1;
+                            opacity: 0.6;
                         }
                     }
                 }
@@ -462,21 +517,11 @@ header {
                     }
                 }
             }
-            .tabula_sub-blog {
-                .tabula_sub-list.tabula_sub-list-sub {
-                    padding: 0;
-                }
-                .tabula_sub2-mobile {
-                    li {
-                        font-size: $fse-1;
-                        padding: 1em 2em;
-                        opacity: 0.8;
-                    }
-                }
-            }
         }
+
         .tabula_sub-title {
             position: relative;
+
             i {
                 cursor: pointer;
                 position: absolute;
@@ -491,6 +536,7 @@ header {
                 display: none;
             }
         }
+
         .navbar-nav {
             padding: 0 50px;
         }
@@ -509,11 +555,13 @@ header {
             display: block;
         }
     }
-    .tabula_wrapper-navbar {
+
+    .header_link {
         display: block;
         .tabula_logo {
             text-align: center;
         }
+
         .tabula_nav-contacts {
             flex-direction: column;
         }

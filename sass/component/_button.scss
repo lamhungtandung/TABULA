@@ -1,17 +1,20 @@
-.btn-tabula {
+.hover_button {
     background-color: $color-primary;
     color: $color-white;
-    transition: ease-in-out all 0.5s;
+    transition: ease-in-out all 0.4s;
     box-shadow: 0 0 0 3em $color-primary inset;
-    transition: all 0.3s;
+    transition: all 0.4s;
+
     &:hover {
         box-shadow: 0 0 0 1px $color-primary inset;
         color:$color-primary;
     }
-    transition: all 0.3s;
+
+    transition: all 0.4s;
     transform-origin: center;
     background: transparent;
 }
+
 .tabula_nav-btn{
     padding: 0.85em 1.3em;
     border-radius: 24px;

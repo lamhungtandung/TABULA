@@ -1,31 +1,75 @@
+// clear
+.clear-both {
+    clear: both;
+}
+
 //color
 $color-primary: #b61984;
 $color-black: #181818;
 $color-white: #fff;
+$color-white-1: #f5f9fe;
+$color-white-2: #e2ebfc;
+$color-white-3: #fff;
+$color-blue-1: #1d365e;
+$color-blue-2: #2a73dd;
+$color-blue-3: #c9d8f4;
+$color-yellow-1: #f9d412;
 
-// FONTSIZE
+//Padding
+$pd-1: 25px;
+$pd-2: 225px;
+$pd-3: 13px;
+$pd-4: 44px;
+$pd-5: 100px;
+$pd-6: 8px;
+$pd-7: 60px;
+$pd-8: 150px;
+$pd-9: 35px;
+
+//Margin
+$mg-0: 10px;
+$mg-1: 30px;
+$mg-2: 25px;
+$mg-3: 70px;
+$mg-4: 60px;
+$mg-5: 20px;
+$mg-6: 45px;
+
+//border
+$bd-1: 2px;
+$bd-2: 8px;
+
+// fontsize
 $fsr-1: 0.75rem;
-$fsr-2: 1rem; //contact icon,header 0.9rem
+$fsr-2: 1rem;
 $fsr-3: 1.55rem;
 $fsr-4: 1.6rem;
 $fsr-5: 2.5rem;
 $fsr-6: 3.8rem;
 
-$fsp-1: 13px; //nav bar 13px all
+$fsp-1: 13px;
 $fsp-2: 15px;
-
-$fse-1: 0.9em; //footer tag a (contact...),
-//0.8em are input
-//iconfooter
+$fse-1: 0.9em;
 $fse-2: 2em;
 
 //fw
 $fw1: 400;
 $fw2: 500;
-
 $fw3: 600;
 $fw4: 700;
-// floatLeft
-.clear-both {
-    clear: both;
-}
+
+//responsive
+$breakpoints: (
+    "extra-large": 1200px,
+    "more-large": 1199px,
+    "medium-large": 1024px,
+    "large": 992px,
+    "normal-large-3": 913px,
+    "normal-large-2": 881px,
+    "normal-large": 817px,
+    "medium": 768px,
+    "small": 576px,
+    "smaller": 415px,
+    "smaller-2": 412px,
+    "smaller-1": 394px
+);

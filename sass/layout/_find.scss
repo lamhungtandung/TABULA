@@ -1,0 +1,250 @@
+#course_email {
+    max-width: calc(100% - 60px);
+    margin: 0 auto;
+    padding-top: 30px;
+
+    .course_img {
+        width: 100%;
+        z-index: 4;
+
+        .course_img2 {
+            padding-top: 60px;
+            padding-right: 42px;
+            padding-left: 120px;
+        }
+    }
+
+    .course_form {
+        margin-top: 50px;
+        padding-right: 105px;
+        z-index: 4;
+
+        .course_form-item {
+            background-color: $color-white;
+            border-radius: 10px;
+            padding: 0 28px;
+            box-shadow: 0 30px 30px -10px rgb(0 0 0 / 20%);
+
+            h2 {
+                @include styleText($color-black, $fsr-5, $fw4);
+                margin-bottom: $mg-6;
+                padding-top: $pd-4 - 3px;
+            }
+
+            .course_name {
+                padding-right: $pd-3 + 3px;
+                margin-bottom: $mg-5 - 5px;
+
+                span {
+                    padding-right: $fsp-2;
+                }
+
+                .form-control {
+                    transition: all 0.5s;
+
+                    &:focus{
+                        box-shadow: 0 0 4px 0 rgb(0 0 0 / 10%);
+                        border: 1px solid rgba(0, 0, 0, 0.3);
+                        outline: none;
+                    }
+
+                    font-size: $fse-1 - 0.1;
+                    padding: 1em 1em 1em 3.5em;
+                    height: 3.7em;
+                    border-radius: 50px;
+                    border-radius: 50px;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                }
+                position: relative;
+
+                i {
+                    color: $color-primary;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 15px;
+                }
+            }
+
+            .course_contact {
+                @extend .course_name;
+            }
+
+            .course_select {
+                @extend .course_name;
+
+                .course-option {
+                    &.show {
+
+                        span {
+                            box-shadow: 0 0 4px 0 rgb(0 0 0 / 10%);
+                        }
+
+                        .tabula_select {
+                            display: block;
+
+                            li {
+                                cursor: pointer;
+                                transition: all 0.5s;
+                            }
+
+                            li:hover {
+
+                                & {
+                                    color: $color-primary;
+                                }
+                            }
+                        }
+
+                        .fa-angle-up {
+                            display: block;
+                        }
+
+                        .fa-angle-down {
+                            display: none;
+                        }
+                    }
+
+                    .course_option-text {
+                        position: relative;
+                        border: 1px solid rgba(0, 0, 0, 0.1);
+                        border-radius: 50px;
+
+                        span {
+                            width: 100%;
+                            height: 100%;
+                            position: relative;
+                            transition: all 0.5s;
+                            padding-left: 36px;
+                            line-height: 3.2em;
+                            opacity: 0.8;
+                            font-size: 0.8em;
+                            display: block;
+                            cursor: pointer;
+                            border-radius: 50px;
+
+                            i {
+                                position: absolute;
+                                color: $color-primary;
+                                left: 95%;
+                            }
+                        }
+                    }
+
+                    .tabula_select {
+                        display: none;
+                        border: 1px solid rgba(0, 0, 0, 0.1);
+                        padding-left: 36px;
+                        opacity: 0.8;
+                        font-size: 0.8em;
+                        
+                    }
+
+                    .fa-angle-down {
+                        display: block;
+                    }
+
+                    .fa-angle-up {
+                        display: none;
+                    }
+                }
+
+                i {
+                    color: $color-primary;
+                    font-size: $fsp-2 - 3px;
+                    opacity: 1;
+                    z-index: 4;
+                }
+            }
+            .tabula_area-wrap {
+                border-radius: 30px;
+
+                @extend .course_name;
+
+                i {
+                    top: 20px;
+                }
+
+                .mess {
+                    font-size: 0.8em;
+                    border-radius: 12px;
+                    width: 100%;
+                    padding-top: $pd-6;
+                    padding-left: $pd-9 -1px;
+                    height: 87px;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                    transition: all 0.4s;
+
+                    &:focus {
+                        box-shadow: 0 0 4px 0 rgb(0 0 0 / 10%);
+                        border: 1px solid rgba(0, 0, 0, 0.3);
+                        outline: none;
+                    }
+                }
+            }
+            //send
+            .course_send {
+                width: 150px;
+                margin: 2em 0;
+                margin-bottom: 6em;
+                border-radius: 50px;
+                height: 4em;
+                letter-spacing: 1px;
+                line-height: 2.8em;
+                font-size: $fse-1 - 0.1;
+            }
+        }
+    }
+}
+
+//responsive
+@include responsive('large'){
+
+    #course_email .course_form{
+        padding: 19px;
+        padding-top: $pd-9 - 5px;
+    }
+}
+
+@include responsive("extra-large") {
+    body {
+        font-size: 15px;
+    }
+
+    #course_email {
+
+        .course_img {
+            padding: 0;
+        }
+
+        .course_form {
+
+            .course_name {
+                width: 100%;
+            }
+
+            .course_contact {
+                width: 100%;
+            }
+
+            .course_form-item {
+                box-shadow: 0 30px 30px -10px rgb(0 0 0 / 20%);
+                background-color: $color-white;
+
+                h2 {
+                    padding-top: $pd-3 + 1px;
+                    font-size: 2rem;
+                }
+                padding: 0;
+
+                .course_content {
+                    padding-top: $pd-1 - 3px;
+                }
+
+                .course_content {
+                    padding: 0 $pd-1;
+                }
+            }
+        }
+    }
+}
